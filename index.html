@@ -11,13 +11,10 @@
   width: 200px;
 }
 .pie_segment {
-  --a: calc(var(--over50, 0) * -100%);
-  --b: calc((1+ var(--over50, 0)) * 100%);
+  overflow: var(--overflow, visible);
   height: 100%;
   position: absolute;
   transform: translate(0, -50%) rotate(90deg) rotate(0deg);
-  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-
   transform-origin: 50% 100%;
   width: 100%;
 }
@@ -35,15 +32,14 @@
   transform-origin: 50% 0;
 }
 .pie_segment:after {
-  background: #00f;
+  background: #eb3636;
   opacity: var(--over50, 0);
 }
 </style>
 </head>
 <body>
 <div class="pie">
-  <div id="pSegment" class="pie_segment" style="--value: 20; --over50: 0"></div>
+  <div id="pSegment" class="pie_segment" style="--value: 60; --over50: 1; --overflow: visible"></div>
 </div>
-<div id="text">sdsdsd</div>
 </body>
 </html>
